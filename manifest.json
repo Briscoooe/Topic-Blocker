@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Trend Blocker",
+  "description": "An extension that removes posts about any topic you wish
+   from your Facebook news feed, before they appear",
+  "version": "0.1",
+
+  "browser_action": {
+  		"default_icon": {
+  			"19": "icons/19x19.png",
+  			"38": "icons/38x38.png"
+  		},
+  		"default_title": "Trend Blocker Configuration",
+  		"default_popup": "popup.html"
+  	},
+
+
+  	"content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/*"
+      ],
+      "js": ["jquery-2.1.4.min.js", "content.js"]
+    }
+  ]
+}
