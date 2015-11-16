@@ -2,7 +2,12 @@
   "manifest_version": 2,
   "name": "Trend Blocker",
   "description": "An extension that removes posts about any topic you wish
-   from your Facebook news feed, before they appear",
+   from your Facebook news feed, before they appear. The extension is also
+   an ideal way to prevent you from seeing spoilers to your favourite TV shows
+
+   Can also be used to view only posts on a certain topic
+
+   avoiding score on sporting event",
   "version": "0.1",
 
   "browser_action": {
@@ -11,16 +16,22 @@
   			"38": "icons/38x38.png"
   		},
   		"default_title": "Trend Blocker Configuration",
-  		"default_popup": "popup.html"
+  		"default_popup": "index.html"
   	},
 
-
-  	"content_scripts": [
+  "permissions": [
+    "storage"
+  ],
+  
+  "content_scripts": [
     {
       "matches": [
-        "https://www.facebook.com/*"
+        "https://www.facebook.com/*",
+        "https://www.twitter.com/*"
       ],
-      "js": ["jquery-2.1.4.min.js", "content.js"]
+      "js": ["js/jquery-2.1.4.min.js", "js/content.js", "js/popup.js"]
     }
-  ]
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
 }

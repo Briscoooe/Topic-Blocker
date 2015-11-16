@@ -1,0 +1,28 @@
+body {
+    width: 320px;
+}
+
+.topic-item .btn-remove-topic {
+    display:none;
+}
+
+.topic-item:hover .btn-remove-topic {
+    display: block;
+}
+
+.topic-item .topic-content {
+    font-weight: bold;
+}
+.topic-item.completed .topic-content {
+    color:darkgray;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+#topic-list {
+    margin-bottom: 10px;
+}
+
+#btn-remove-all {
+    margin-bottom: 10px;
+}
